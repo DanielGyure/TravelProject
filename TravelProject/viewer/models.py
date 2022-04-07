@@ -7,3 +7,11 @@ class Country(models.Model):
 
     def __str__(self):
         return self.name
+
+class Hotel(models.Model):
+    name = models.CharField(max_length=100)
+    standard = models.DateField(null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
+
+    def __str__(self):
+        return self.name

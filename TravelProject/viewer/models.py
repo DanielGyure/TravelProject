@@ -27,6 +27,6 @@ class Travel(models.Model):
     type = models.CharField(max_length=15, null=False, blank=False)
     price = models.BooleanField
     description = models.TextField
-       
+
     def __str__(self):
         return self.name

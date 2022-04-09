@@ -25,7 +25,7 @@ class Travel(models.Model):
     date_of_return = models.DateField(null=False, blank=False)
     people = models.IntegerField(null=False, blank=False)
     type = models.CharField(max_length=15, null=False, blank=False)
-    price = models.BooleanField
+    price = models.FloatField(null=True, blank=True, default=0)
     description = models.TextField
 
     def __str__(self):

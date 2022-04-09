@@ -18,6 +18,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='travel',
             name='price',
-            field=models.FloatField(default='-'),
+            field=models.FloatField(default=0),
         ),
     ]

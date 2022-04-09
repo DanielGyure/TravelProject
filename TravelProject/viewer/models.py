@@ -19,4 +19,14 @@ class City(models.Model):
         return self.name
 
 
-
+class Travel(models.Model):
+    city = models.ForeignKey(City, on_delete=models.DO_NOTHING, null=False, blank=False)
+    date_of_departure = models.DateField(null=False, blank=False)
+    date_of_return = models.DateField(null=False, blank=False)
+    people = models.IntegerField(null=False, blank=False)
+    type = models.CharField(max_length=15, null=False, blank=False)
+    price = models.BooleanField
+    description = models.TextField
+       
+    def __str__(self):
+        return self.name

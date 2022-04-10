@@ -2,6 +2,10 @@
 
 {% block content %}
 
+<a href="{% url 'create_travel' %}" class="btn btn-success">Create Trip</a>
+
+<hr>
+
 <p><b>Name:</b> {{travel.name}}</p>
 <p><b>City:</b> {{travel.city}}</p>
 <p><b>Departure Date:</b> {{travel.date_of_departure}}</p>

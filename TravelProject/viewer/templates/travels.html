@@ -6,13 +6,11 @@
   <thead class="thead-dark">
   <tr>
     <th>Name</th>
-    <th>Year</th>
+    <th>City</th>
     <th>Departure Date</th>
     <th>Return Date</th>
-    <th>Number of People</th>
     <th>Type</th>
     <th>Price</th>
-    <th>Description</th>
   </tr>
   </thead>
 
@@ -22,10 +20,8 @@
     <td>{{ t.city }}</td>
     <td>{{ t.date_of_departure }}</td>
     <td>{{ t.date_of_return }}</td>
-    <td>{{ t.people }}</td>
     <td>{{ t.type }}</td>
     <td>{{ t.price }}</td>
-    <td>{{ t.description }}</td>
   </tr>
     {% endfor %}
 

@@ -20,13 +20,14 @@ class City(models.Model):
 
 
 class Travel(models.Model):
-    city = models.ForeignKey(City, on_delete=models.DO_NOTHING, null=False, blank=False)
-    date_of_departure = models.DateField(null=False, blank=False)
-    date_of_return = models.DateField(null=False, blank=False)
-    people = models.IntegerField(null=False, blank=False)
-    type = models.CharField(max_length=15, null=False, blank=False)
-    price = models.FloatField(null=True, blank=True, default=0)
-    description = models.TextField
+    name = models.CharField(max_length=50, null=True, blank=True)
+    city = models.ForeignKey(City, on_delete=models.DO_NOTHING)
+    date_of_departure = models.DateField()
+    date_of_return = models.DateField()
+    people = models.IntegerField()
+    type = models.CharField(max_length=15)
+    price = models.FloatField(default=0)
+    description = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return self.name

@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from viewer.views import WelcomeView, TravelListView, TravelDetailView, CreateTravelView
+from viewer.views import WelcomeView, TravelListView, TravelDetailView, \
+    CreateTravelView, UpdateTravelView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,4 +24,5 @@ urlpatterns = [
     path('travels', TravelListView.as_view(), name="travels"),
     path('travels/<int:pk>', TravelDetailView.as_view(), name='travel_detail'),
     path('travels/create', CreateTravelView.as_view(), name='create_travel'),
+    path('travels/<int:pk>/update', UpdateTravelView.as_view(), name='update_travel'),
 ]

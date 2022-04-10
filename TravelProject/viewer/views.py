@@ -1,6 +1,6 @@
 import random
 from django.http import HttpResponse
-from django.views.generic import TemplateView, ListView, DetailView, CreateView
+from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView
 from django.shortcuts import render
 from viewer.models import Travel
 from django.urls import reverse_lazy
@@ -24,3 +24,10 @@ class CreateTravelView(CreateView):
     model = Travel
     fields = '__all__'
     success_url = reverse_lazy('travels')
+
+class UpdateTravelView(UpdateView):
+    template_name = 'update_travel.html'
+    model = Travel
+    fields = '__all__'
+    success_url = reverse_lazy('travels')
+    context_object_name = 'travel'

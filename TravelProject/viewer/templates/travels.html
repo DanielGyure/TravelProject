@@ -16,7 +16,7 @@
 
     {% for t in travels %}
   <tr>
-    <td>{{ t.name }}</td>
+    <td><a href="{% url 'travel_detail' t.id %}">{{ t.name }}</a></td>
     <td>{{ t.city }}</td>
     <td>{{ t.date_of_departure }}</td>
     <td>{{ t.date_of_return }}</td>

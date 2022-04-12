@@ -1,6 +1,6 @@
 import random
 from django.http import HttpResponse
-from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView
+from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.shortcuts import render
 from viewer.models import Travel
 from django.urls import reverse_lazy
@@ -31,3 +31,9 @@ class UpdateTravelView(UpdateView):
     fields = '__all__'
     success_url = reverse_lazy('travels')
     context_object_name = 'travel'
+
+class DeleteTravel(DeleteView):
+    template_name = 'delete_travel.html'
+    model = Travel
+    context_object_name = 'travel'
+    success_url = reverse_lazy('travels')

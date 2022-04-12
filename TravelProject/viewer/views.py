@@ -2,7 +2,7 @@ import random
 from django.http import HttpResponse
 from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.shortcuts import render
-from viewer.models import Travel
+from viewer.models import Travel, Country
 from django.urls import reverse_lazy
 
 # Create your views here.
@@ -37,3 +37,8 @@ class DeleteTravel(DeleteView):
     model = Travel
     context_object_name = 'travel'
     success_url = reverse_lazy('travels')
+
+class CountryListView(ListView):
+    template_name = 'countries.html'
+    model = Country
+    context_object_name = 'countries'

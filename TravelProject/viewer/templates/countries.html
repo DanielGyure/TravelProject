@@ -1,0 +1,23 @@
+{% extends 'base.html'  %}
+
+{% block content %}
+
+
+<table class="table">
+  <thead class="thead-dark">
+  <tr>
+    <th>Name</th>
+    <th>Country Code</th>
+  </tr>
+  </thead>
+
+    {% for c in countries %}
+  <tr>
+    <td>{{ c.name }}</td>
+    <td>{{ c.code }}</td>
+  </tr>
+    {% endfor %}
+
+</table>
+
+{% endblock %}

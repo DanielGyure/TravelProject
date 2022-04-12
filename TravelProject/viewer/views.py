@@ -60,3 +60,9 @@ class UpdateCountryView(UpdateView):
     fields = '__all__'
     success_url = reverse_lazy('countries')
     context_object_name = 'country'
+
+class DeleteCountry(DeleteView):
+    template_name = 'delete_country.html'
+    model = Country
+    context_object_name = 'country'
+    success_url = reverse_lazy('countries')

@@ -53,3 +53,10 @@ class CreateCountryView(CreateView):
     model = Country
     fields = '__all__'
     success_url = reverse_lazy('countries')
+
+class UpdateCountryView(UpdateView):
+    template_name = 'update_country.html'
+    model = Country
+    fields = '__all__'
+    success_url = reverse_lazy('countries')
+    context_object_name = 'country'

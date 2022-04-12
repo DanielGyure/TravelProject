@@ -47,3 +47,9 @@ class CountryDetailView(DetailView):
     template_name = 'country_detail.html'
     model = Country
     context_object_name = 'country'
+
+class CreateCountryView(CreateView):
+    template_name = 'create_country.html'
+    model = Country
+    fields = '__all__'
+    success_url = reverse_lazy('countries')

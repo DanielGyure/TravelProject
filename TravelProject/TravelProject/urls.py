@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from viewer.views import (
     WelcomeView, TravelListView, TravelDetailView, CreateTravelView,
-    UpdateTravelView, DeleteTravel, CountryListView, CountryDetailView
+    UpdateTravelView, DeleteTravel, CountryListView, CountryDetailView, CreateCountryView
 )
 
 urlpatterns = [
@@ -30,4 +30,5 @@ urlpatterns = [
     path('travels/<int:pk>/delete', DeleteTravel.as_view(), name="delete_travel"),
     path('countries', CountryListView.as_view(), name="countries"),
     path('countries/<int:pk>', CountryDetailView.as_view(), name='country_detail'),
+    path('countries/create', CreateCountryView.as_view(), name='create_country'),
 ]

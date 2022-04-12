@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from viewer.views import WelcomeView, TravelListView, TravelDetailView, CreateTravelView, UpdateTravelView, DeleteTravel
+from viewer.views import (
+    WelcomeView, TravelListView, TravelDetailView, CreateTravelView,
+    UpdateTravelView, DeleteTravel, CountryListView, CountryDetailView, CreateCountryView,
+    UpdateCountryView, DeleteCountry
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,4 +29,9 @@ urlpatterns = [
     path('travels/create', CreateTravelView.as_view(), name='create_travel'),
     path('travels/<int:pk>/update', UpdateTravelView.as_view(), name='update_travel'),
     path('travels/<int:pk>/delete', DeleteTravel.as_view(), name="delete_travel"),
+    path('countries', CountryListView.as_view(), name="countries"),
+    path('countries/<int:pk>', CountryDetailView.as_view(), name='country_detail'),
+    path('countries/create', CreateCountryView.as_view(), name='create_country'),
+    path('countries/<int:pk>/update', UpdateCountryView.as_view(), name='update_country'),
+    path('countries/<int:pk>/delete', DeleteCountry.as_view(), name="delete_country"),
 ]

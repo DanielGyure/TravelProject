@@ -1,0 +1,14 @@
+{% extends 'base.html'  %}
+
+{% block content %}
+
+<a href="{% url 'update_country' country.id %}" class="btn btn-success">Update Country</a>
+<a href="{% url 'delete_country' country.id %}" class="btn btn-success">Delete Country</a>
+
+<hr>
+
+<p><b>Name:</b> {{country.name}}</p>
+<p><b>Country Code:</b> {{country.code}}</p>
+
+
+{% endblock %}

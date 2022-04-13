@@ -89,3 +89,9 @@ class UpdateCityView(UpdateView):
     fields = '__all__'
     context_object_name = 'city'
     success_url = reverse_lazy('cities')
+
+class DeleteCityView(DeleteView):
+    template_name = 'delete_city.html'
+    model = City
+    context_object_name = 'city'
+    success_url = reverse_lazy('cities')

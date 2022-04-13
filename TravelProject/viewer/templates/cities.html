@@ -1,0 +1,22 @@
+{% extends 'base.html'  %}
+
+{% block content %}
+
+<table class="table">
+  <thead class="thead-dark">
+  <tr>
+    <th>Name</th>
+    <th>Country</th>
+  </tr>
+  </thead>
+
+    {% for c in cities %}
+
+  <tr>
+    <td>{{ c.name }}</td>
+    <td>{{ c.country }}</td>
+  </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

@@ -71,3 +71,8 @@ class CityListView(ListView):
     template_name = 'cities.html'
     model = City
     context_object_name = 'cities'
+
+class CityDetailView(DetailView):
+    template_name = 'city_detail.html'
+    model = City
+    context_object_name = 'city'

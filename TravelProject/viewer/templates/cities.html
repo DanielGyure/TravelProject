@@ -2,6 +2,10 @@
 
 {% block content %}
 
+<a href="{% url 'create_city' %}" class="btn btn-success">Create City</a>
+
+<hr>
+
 <table class="table">
   <thead class="thead-dark">
   <tr>
@@ -13,7 +17,7 @@
     {% for c in cities %}
 
   <tr>
-    <td>{{ c.name }}</td>
+    <td><a href="{% url 'city_detail' c.id %}">{{ c.name }}</a></td>
     <td>{{ c.country }}</td>
   </tr>
     {% endfor %}

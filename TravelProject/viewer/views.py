@@ -76,3 +76,9 @@ class CityDetailView(DetailView):
     template_name = 'city_detail.html'
     model = City
     context_object_name = 'city'
+
+class CreateCityView(CreateView):
+    template_name = 'create_city.html'
+    model = City
+    fields = '__all__'
+    success_url = reverse_lazy('cities')

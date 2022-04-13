@@ -82,3 +82,10 @@ class CreateCityView(CreateView):
     model = City
     fields = '__all__'
     success_url = reverse_lazy('cities')
+
+class UpdateCityView(UpdateView):
+    template_name = 'update_city.html'
+    model = City
+    fields = '__all__'
+    context_object_name = 'city'
+    success_url = reverse_lazy('cities')

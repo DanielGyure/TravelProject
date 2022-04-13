@@ -18,7 +18,8 @@ from django.urls import path
 from viewer.views import (
     WelcomeView, TravelListView, TravelDetailView, CreateTravelView,
     UpdateTravelView, DeleteTravel, CountryListView, CountryDetailView, CreateCountryView,
-    UpdateCountryView, DeleteCountry, CityListView, CityDetailView, CreateCityView,
+    UpdateCountryView, DeleteCountry, CityListView, CityDetailView, CreateCityView, UpdateCityView,
+
 )
 
 urlpatterns = [
@@ -37,4 +38,5 @@ urlpatterns = [
     path('cities', CityListView.as_view(), name="cities"),
     path('cities/<int:pk>', CityDetailView.as_view(), name='city_detail'),
     path('cities/create', CreateCityView.as_view(), name='create_city'),
+    path('cities/<int:pk>/update', UpdateCityView.as_view(), name='update_city'),
 ]

@@ -52,24 +52,27 @@ class CountryDetailView(DetailView):
     model = Country
     context_object_name = 'country'
 
-class CreateCountryView(CreateView):
+class CreateCountryView(PermissionRequiredMixin, CreateView):
     template_name = 'create_country.html'
     model = Country
     fields = '__all__'
     success_url = reverse_lazy('countries')
+    permission_required = 'viewer.add_country'
 
-class UpdateCountryView(UpdateView):
+class UpdateCountryView(PermissionRequiredMixin, UpdateView):
     template_name = 'update_country.html'
     model = Country
     fields = '__all__'
     success_url = reverse_lazy('countries')
     context_object_name = 'country'
+    permission_required = 'viewer.update_country'
 
-class DeleteCountry(DeleteView):
+class DeleteCountry(PermissionRequiredMixin, DeleteView):
     template_name = 'delete_country.html'
     model = Country
     context_object_name = 'country'
     success_url = reverse_lazy('countries')
+    permission_required = 'viewer.delete_country'
 
 class CityListView(ListView):
     template_name = 'cities.html'
@@ -81,21 +84,24 @@ class CityDetailView(DetailView):
     model = City
     context_object_name = 'city'
 
-class CreateCityView(CreateView):
+class CreateCityView(PermissionRequiredMixin, CreateView):
     template_name = 'create_city.html'
     model = City
     fields = '__all__'
     success_url = reverse_lazy('cities')
+    permission_required = 'viewer.add_city'
 
-class UpdateCityView(UpdateView):
+class UpdateCityView(PermissionRequiredMixin, UpdateView):
     template_name = 'update_city.html'
     model = City
     fields = '__all__'
     context_object_name = 'city'
     success_url = reverse_lazy('cities')
+    permission_required = 'viewer.change_city'
 
-class DeleteCityView(DeleteView):
+class DeleteCityView(PermissionRequiredMixin, DeleteView):
     template_name = 'delete_city.html'
     model = City
     context_object_name = 'city'
     success_url = reverse_lazy('cities')
+    permission_required = 'viewer.delete_city'

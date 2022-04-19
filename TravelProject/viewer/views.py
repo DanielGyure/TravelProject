@@ -1,10 +1,10 @@
 import random
 from django.http import HttpResponse
-from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView, FormView
 from django.shortcuts import render
-from viewer.models import Travel, Country, City
+from viewer.models import Travel, Country, City, Profile
 from django.urls import reverse_lazy
-from viewer.forms import RegisterUserForm
+from viewer.forms import RegisterUserForm, BookTravelForm
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 
 # Create your views here.
@@ -111,3 +111,20 @@ class RegisterUser(CreateView):
     template_name = 'register_user.html'
     success_url = reverse_lazy('travels')
     form_class = RegisterUserForm
+
+class BookTravel(LoginRequiredMixin, FormView):
+    template_name = 'book_travel.html'
+    success_url = reverse_lazy('travels')
+    form_class = BookTravelForm
+
+    def get_initial(self):
+        initial = super(BookTravel, self).get_initial()
+        travel = Travel.objects.get(id=self.kwargs['pk'])
+        profile = Profile.objects.get(user= self.request.user)
+
+        initial.update({'travel': travel.pk, 'profile': profile})
+        return initial
+
+    def form_valid(self, form):
+        form.save()
+        return super(BookTravel, self).form_valid(form)

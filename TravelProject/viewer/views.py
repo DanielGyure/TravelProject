@@ -4,6 +4,7 @@ from django.views.generic import TemplateView, ListView, DetailView, CreateView,
 from django.shortcuts import render
 from viewer.models import Travel, Country, City
 from django.urls import reverse_lazy
+from viewer.forms import RegisterUserForm
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 
 # Create your views here.
@@ -99,3 +100,8 @@ class DeleteCityView(DeleteView):
     model = City
     context_object_name = 'city'
     success_url = reverse_lazy('cities')
+
+class RegisterUser(CreateView):
+    template_name = 'register_user.html'
+    success_url = reverse_lazy('travels')
+    form_class = RegisterUserForm

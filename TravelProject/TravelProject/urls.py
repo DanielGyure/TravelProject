@@ -19,7 +19,7 @@ from viewer.views import (
     WelcomeView, TravelListView, TravelDetailView, CreateTravelView,
     UpdateTravelView, DeleteTravel, CountryListView, CountryDetailView, CreateCountryView,
     UpdateCountryView, DeleteCountry, CityListView, CityDetailView, CreateCityView, UpdateCityView,
-    DeleteCityView
+    DeleteCityView, RegisterUser
 )
 
 urlpatterns = [
@@ -41,4 +41,5 @@ urlpatterns = [
     path('cities/<int:pk>/update', UpdateCityView.as_view(), name='update_city'),
     path('cities/<int:pk>/delete', DeleteCityView.as_view(), name='delete_city'),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('register/', RegisterUser.as_view(), name='register'),
 ]

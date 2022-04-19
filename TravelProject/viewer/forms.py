@@ -17,5 +17,5 @@ class BookTravelForm(forms.ModelForm):
         fields = '__all__'
         widgets = {
             'profile': forms.HiddenInput(),
-            'travel': forms.HiddenInput()
+            'name': forms.HiddenInput()
         }

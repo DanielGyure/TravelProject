@@ -2,6 +2,11 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from .models import Profile, Booking
 
+class ContactForm(forms.Form):
+    name = forms.CharField(max_length=50)
+    email = forms.EmailField()
+    message = forms.CharField(max_length=500, widget=forms.Textarea)
+
 class RegisterUserForm(UserCreationForm):
 
     def save(self):

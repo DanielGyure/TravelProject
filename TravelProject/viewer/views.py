@@ -2,7 +2,7 @@ import random
 from django.http import HttpResponse
 from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView, FormView
 from django.shortcuts import render
-from viewer.models import Travel, Country, City, Profile
+from viewer.models import Travel, Country, City, Profile, Booking
 from django.urls import reverse_lazy
 from viewer.forms import RegisterUserForm, BookTravelForm, ContactForm
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
@@ -139,3 +139,8 @@ class ContactView(FormView):
         cleaned_data = form.cleaned_data
         print(cleaned_data)
         return render(self.request, 'contact_success.html')
+
+class BookingListView(ListView):
+    template_name = 'booking_detail.html'
+    model = Booking
+    context_object_name = 'booking'

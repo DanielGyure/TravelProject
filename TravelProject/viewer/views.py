@@ -2,9 +2,9 @@ import random
 from django.http import HttpResponse
 from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView, FormView
 from django.shortcuts import render
-from viewer.models import Travel, Country, City, Profile
+from viewer.models import Travel, Country, City, Profile, Booking
 from django.urls import reverse_lazy
-from viewer.forms import RegisterUserForm, BookTravelForm
+from viewer.forms import RegisterUserForm, BookTravelForm, ContactForm
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 
 # Create your views here.
@@ -128,3 +128,19 @@ class BookTravel(LoginRequiredMixin, FormView):
     def form_valid(self, form):
         form.save()
         return super(BookTravel, self).form_valid(form)
+
+class ContactView(FormView):
+    template_name = 'contact.html'
+    form_class = ContactForm
+    success_url = reverse_lazy('travels')
+
+    def form_valid(self, form):
+        result = super().form_valid(form)
+        cleaned_data = form.cleaned_data
+        print(cleaned_data)
+        return render(self.request, 'contact_success.html')
+
+class BookingListView(ListView):
+    template_name = 'booking_detail.html'
+    model = Booking
+    context_object_name = 'booking'

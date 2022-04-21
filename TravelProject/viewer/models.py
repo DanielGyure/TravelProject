@@ -45,8 +45,8 @@ class Profile(models.Model):
 
 
 class Booking(models.Model):
-    name = models.ForeignKey(Travel, on_delete=models.CASCADE)
-    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    name = models.ForeignKey(Travel, on_delete=models.CASCADE, null=True, blank=True)
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True, blank=True)
     first_name = models.CharField(max_length=50, null=True, blank=True)
     last_name = models.CharField(max_length=50, null=True, blank=True)
     comments = models.TextField(null=True, blank=True)

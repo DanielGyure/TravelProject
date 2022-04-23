@@ -140,7 +140,8 @@ class ContactView(FormView):
         print(cleaned_data)
         return render(self.request, 'contact_success.html')
 
-class BookingListView(ListView):
+class BookingListView(PermissionRequiredMixin, ListView):
     template_name = 'bookings.html'
     model = Booking
     context_object_name = 'bookings'
+    permission_required = 'viewer.bookings'

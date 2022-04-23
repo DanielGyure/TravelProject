@@ -1,9 +1,13 @@
 {% extends 'base.html'  %}
 
 {% block content %}
-
+{% if perms.viewer.change_city %}
 <a href="{% url 'update_city' city.id %}" class="btn btn-success">Update City</a>
+{% endif %}
+
+{% if perms.viewer.delete_city %}
 <a href="{% url 'delete_city' city.id %}" class="btn btn-success">Delete City</a>
+{% endif %}
 
 <hr>
 

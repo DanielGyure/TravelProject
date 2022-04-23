@@ -2,8 +2,13 @@
 
 {% block content %}
 
+{% if perms.viewer.change_country %}
 <a href="{% url 'update_country' country.id %}" class="btn btn-success">Update Country</a>
+{% endif %}
+
+{% if perms.viewer.delete_country %}
 <a href="{% url 'delete_country' country.id %}" class="btn btn-success">Delete Country</a>
+{% endif %}
 
 <hr>
 

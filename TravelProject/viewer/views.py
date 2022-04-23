@@ -145,3 +145,14 @@ class BookingListView(PermissionRequiredMixin, ListView):
     model = Booking
     context_object_name = 'bookings'
     permission_required = 'viewer.bookings'
+
+class UserBookingListView(ListView):
+    template_name = 'user_booking.html'
+    model = Booking
+    context_object_name = 'bookings'
+
+    def get_queryset(self):
+        profile = Profile.objects.get(user=self.request.user)
+        bookings = Booking.objects.filter(profile=profile)
+
+        return bookings

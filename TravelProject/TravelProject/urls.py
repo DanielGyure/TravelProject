@@ -44,5 +44,5 @@ urlpatterns = [
     path('register/', RegisterUser.as_view(), name='register'),
     path('travels/<int:pk>/booking', BookTravel.as_view(), name="book_travel"),
     path('contact', ContactView.as_view(), name="contact"),
-    path('bookings', BookingListView.as_view(), name='booking_detail'),
+    path('bookings', BookingListView.as_view(), name='bookings'),
 ]

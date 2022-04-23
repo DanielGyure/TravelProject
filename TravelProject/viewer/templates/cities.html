@@ -2,7 +2,9 @@
 
 {% block content %}
 
+{% if perms.viewer.add_city %}
 <a href="{% url 'create_city' %}" class="btn btn-success">Create City</a>
+{% endif %}
 
 <hr>
 

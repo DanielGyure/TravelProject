@@ -19,13 +19,14 @@ from viewer.views import (
     WelcomeView, TravelListView, TravelDetailView, CreateTravelView,
     UpdateTravelView, DeleteTravel, CountryListView, CountryDetailView, CreateCountryView,
     UpdateCountryView, DeleteCountry, CityListView, CityDetailView, CreateCityView, UpdateCityView,
-    DeleteCityView, RegisterUser, BookTravel, ContactView, BookingListView
+    DeleteCityView, RegisterUser, BookTravel, ContactView, BookingListView, UserBookingListView
 )
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', WelcomeView.as_view(), name="welcome"),
     path('travels', TravelListView.as_view(), name="travels"),
+    path('travels/my_booking', UserBookingListView.as_view(), name='user_booking'),
     path('travels/<int:pk>', TravelDetailView.as_view(), name='travel_detail'),
     path('travels/create', CreateTravelView.as_view(), name='create_travel'),
     path('travels/<int:pk>/update', UpdateTravelView.as_view(), name='update_travel'),

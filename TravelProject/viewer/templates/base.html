@@ -35,9 +35,11 @@
             <a class="nav-item nav-link active" href="{% url 'contact' %}">
               Contact
             </a>
+            {% if perms.viewer.bookings %}
             <a class="nav-item nav-link active" href="{% url 'bookings' %}">
               Bookings
             </a>
+            {% endif %}
           </div>
         </div>
       </div>

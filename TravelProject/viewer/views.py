@@ -141,6 +141,6 @@ class ContactView(FormView):
         return render(self.request, 'contact_success.html')
 
 class BookingListView(ListView):
-    template_name = 'booking_detail.html'
+    template_name = 'bookings.html'
     model = Booking
-    context_object_name = 'booking'
+    context_object_name = 'bookings'

@@ -114,7 +114,7 @@ class RegisterUser(CreateView):
 
 class BookTravel(LoginRequiredMixin, FormView):
     template_name = 'book_travel.html'
-    success_url = reverse_lazy('travels')
+    success_url = reverse_lazy('user_booking')
     form_class = BookTravelForm
 
     def get_initial(self):
@@ -146,10 +146,12 @@ class BookingListView(PermissionRequiredMixin, ListView):
     context_object_name = 'bookings'
     permission_required = 'viewer.bookings'
 
-class UserBookingListView(ListView):
+class UserBookingListView(LoginRequiredMixin,ListView):
     template_name = 'user_booking.html'
     model = Booking
     context_object_name = 'bookings'
+    permission_required = 'viewer.user_booking'
+
 
     def get_queryset(self):
         profile = Profile.objects.get(user=self.request.user)

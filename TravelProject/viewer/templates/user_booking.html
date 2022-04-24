@@ -27,8 +27,10 @@
 
   </table>
 {% else %}
+<h5>
   <p>You currently have no bookings!</p>
   <p>Click <a href="{% url 'travels' %}">here</a> to see our available offers.</p>
+</h5>
 {% endif %}
 
 {% endblock %}

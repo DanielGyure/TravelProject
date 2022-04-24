@@ -6,6 +6,7 @@ from viewer.models import Travel, Country, City, Profile, Booking
 from django.urls import reverse_lazy
 from viewer.forms import RegisterUserForm, BookTravelForm, ContactForm
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.core.mail import send_mail
 
 # Create your views here.
 class WelcomeView(TemplateView):
@@ -138,6 +139,14 @@ class ContactView(FormView):
         result = super().form_valid(form)
         cleaned_data = form.cleaned_data
         print(cleaned_data)
+
+        send_mail(
+            f'Contact email from {cleaned_data["name"]}',
+            cleaned_data['message'] + f' User email: {cleaned_data["email"]}',
+            'contact@nordictravel.com',
+            ['daniel.gyure84@gmail.com'],
+            fail_silently=False,
+        )
         return render(self.request, 'contact_success.html')
 
 class BookingListView(PermissionRequiredMixin, ListView):

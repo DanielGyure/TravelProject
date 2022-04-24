@@ -2,19 +2,20 @@
 
 {% block content %}
 
-{%if travel.cover %}
-  <p> <img src="{{travel.cover.url}}" width="500" height="auto"> </p>
-{% else %}
-  <p> <img src="https://dummyimage.com/200x300/000/fff&text=NO+IMAGE" width="500" height="auto"> </p>
-{% endif %}
-
-
 {% if perms.viewer.change_travel %}
 <a href="{% url 'update_travel' travel.id %}" class="btn btn-success">Update Trip</a>
 {% endif %}
 
 {% if perms.viewer.delete_travel %}
 <a href="{% url 'delete_travel' travel.id %}" class="btn btn-success">Delete Trip</a>
+{% endif %}
+
+<hr>
+
+{%if travel.cover %}
+  <p> <img src="{{travel.cover.url}}" width="500" height="auto"> </p>
+{% else %}
+  <p> <img src="https://dummyimage.com/200x300/000/fff&text=NO+IMAGE" width="500" height="auto"> </p>
 {% endif %}
 
 <hr>

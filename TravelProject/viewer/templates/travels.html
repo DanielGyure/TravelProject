@@ -10,17 +10,17 @@
 
 {% for t in travels %}
 
-<div class="card mb-3" style="max-width: 700px;">
+<div class="card mb-3" style="max-width: 900px;">
   <div class="row g-0">
     <div class="col-md-4">
-      <img src="{{t.cover.url}}" class="img-fluid rounded-start">
+      <img src="{{t.cover.url}}" width="300" height="auto">
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title"><a href="{% url 'travel_detail' t.id %}">{{ t.name }}</a></h5>
-        <p class="card-text">Departure Date: {{ t.date_of_departure }}</p>
-        <p class="card-text">Return Date: {{ t.date_of_return }}</p>
-        <p class="card-text"><small class="text-muted">Price: {{ t.price }}</small></p>
+        <h5 class="card-title"><a href="{% url 'travel_detail' t.id %}"><b>{{ t.name }}</b></a></h5>
+        <p class="card-text"><b>Departure Date:</b> {{ t.date_of_departure }}</p>
+        <p class="card-text"><b>Return Date:</b> {{ t.date_of_return }}</p>
+        <p class="card-text"><small class="text-muted"><b>Price: {{ t.price }} EUR</b></small></p>
       </div>
     </div>
   </div>

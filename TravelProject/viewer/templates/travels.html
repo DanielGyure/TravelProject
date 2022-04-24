@@ -8,6 +8,29 @@
 
 <hr>
 
+{% for t in travels %}
+
+<div class="card mb-3" style="max-width: 700px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{t.cover.url}}" class="img-fluid rounded-start">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><a href="{% url 'travel_detail' t.id %}">{{ t.name }}</a></h5>
+        <p class="card-text">Departure Date: {{ t.date_of_departure }}</p>
+        <p class="card-text">Return Date: {{ t.date_of_return }}</p>
+        <p class="card-text"><small class="text-muted">Price: {{ t.price }}</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endfor %}
+
+</div>
+
+
 <table class="table">
   <thead class="thead-dark">
   <tr>

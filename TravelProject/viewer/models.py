@@ -30,6 +30,7 @@ class Travel(models.Model):
     type = models.CharField(max_length=15)
     price = models.FloatField(default=0)
     description = models.TextField(null=True, blank=True)
+    cover = models.ImageField(null=True, blank=True, upload_to='images/')
 
     def __str__(self):
         return self.name

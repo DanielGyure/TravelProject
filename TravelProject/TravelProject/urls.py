@@ -46,4 +46,5 @@ urlpatterns = [
     path('travels/<int:pk>/booking', BookTravel.as_view(), name="book_travel"),
     path('contact', ContactView.as_view(), name="contact"),
     path('bookings', BookingListView.as_view(), name='bookings'),
+    path('captcha/', include('captcha.urls')),
 ]

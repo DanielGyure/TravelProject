@@ -1,11 +1,13 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from .models import Profile, Booking
+from captcha.fields import CaptchaField
 
 class ContactForm(forms.Form):
     name = forms.CharField(max_length=50)
     email = forms.EmailField()
     message = forms.CharField(max_length=500, widget=forms.Textarea)
+    captcha = CaptchaField()
 
 class RegisterUserForm(UserCreationForm):
 

@@ -13,7 +13,11 @@
 <div class="card mb-3" style="max-width: 900px;">
   <div class="row g-0">
     <div class="col-md-4">
-      <img src="{{t.cover.url}}" width="300" height="auto">
+      {%if t.cover %}
+        <img src="{{t.cover.url}}" width="300" height="auto">
+      {% else %}
+        <img src="https://dummyimage.com/200x300/000/fff&text=NO+IMAGE" width="300" height="auto">
+      {% endif %}
     </div>
     <div class="col-md-8">
       <div class="card-body">

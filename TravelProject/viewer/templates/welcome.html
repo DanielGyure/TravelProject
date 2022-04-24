@@ -2,8 +2,16 @@
 
 {% block content %}
 
+
+<div class="text-center">
+  <a href="https://imgbb.com/"><img src="https://i.ibb.co/3yR7Ttk/Flagstogether.jpg" alt="Flagstogether" border="0" width="300" height="auto"></a>
+</div>
+
+<br>
+
 <h1 style="text-align:center">Welcome to Nordic Travel!</h1>
 
+<hr>
 
 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -15,19 +23,19 @@
     <div class="carousel-item active">
       <img src="{{travel1.cover.url}}" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5><a href="{% url 'travel_detail' travel1.id %}"><b>{{ travel1.name }}</b></a></H5>
+        <h2><a href="{% url 'travel_detail' travel1.id %}" style="color:white"><b>{{ travel1.name }}</b></a></h2>
       </div>
     </div>
     <div class="carousel-item">
       <img src="{{travel2.cover.url}}" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5><a href="{% url 'travel_detail' travel2.id %}"><b>{{ travel2.name }}</b></a></h5>
+        <h2><a href="{% url 'travel_detail' travel2.id %}" style="color:white"><b>{{ travel2.name }}</b></a></h2>
       </div>
     </div>
     <div class="carousel-item">
       <img src="{{travel3.cover.url}}" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5><a href="{% url 'travel_detail' travel3.id %}"><b>{{ travel3.name }}</b></a></h5>
+        <h2 color="white"><a href="{% url 'travel_detail' travel3.id %}" style="color:white"><b>{{ travel3.name }}</b></a></h2>
       </div>
     </div>
   </div>

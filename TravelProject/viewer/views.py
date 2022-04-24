@@ -11,6 +11,10 @@ from django.core.mail import send_mail
 # Create your views here.
 class WelcomeView(TemplateView):
     template_name = 'welcome.html'
+    def get_context_data(self, **kwargs):
+        travels = Travel.objects.all()[:3]
+        context = {"travel1":travels[0], "travel2":travels[1], "travel3":travels[2] }
+        return context
 
 class TravelListView(ListView):
     template_name = 'travels.html'

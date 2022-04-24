@@ -31,29 +31,4 @@
 </div>
 
 
-<table class="table">
-  <thead class="thead-dark">
-  <tr>
-    <th>Name</th>
-    <th>City</th>
-    <th>Departure Date</th>
-    <th>Return Date</th>
-    <th>Type</th>
-    <th>Price</th>
-  </tr>
-  </thead>
-
-    {% for t in travels %}
-  <tr>
-    <td><a href="{% url 'travel_detail' t.id %}">{{ t.name }}</a></td>
-    <td>{{ t.city }}</td>
-    <td>{{ t.date_of_departure }}</td>
-    <td>{{ t.date_of_return }}</td>
-    <td>{{ t.type }}</td>
-    <td>{{ t.price }}</td>
-  </tr>
-    {% endfor %}
-
-</table>
-
 {% endblock %}

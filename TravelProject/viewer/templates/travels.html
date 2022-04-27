@@ -2,6 +2,20 @@
 
 {% block content %}
 
+<div class="container">
+
+  <form method="get">
+  <div class="input-group">
+    <input type="text" class="form-control" placeholder="Search for an offer" name="search">
+    <div class="input-group-append">
+      <button class="btn btn-secondary" type="submit">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </div>
+  </form>
+</div>
+
 {% if perms.viewer.add_travel %}
 <a href="{% url 'create_travel' %}" class="btn btn-success">Create Trip</a>
 {% endif %}

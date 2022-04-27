@@ -21,6 +21,18 @@ class TravelListView(ListView):
     model = Travel
     context_object_name = 'travels'
 
+    def get_queryset(self):
+        travels = Travel.objects.all()
+
+        search = self.request.GET.get('search')
+
+        if search:
+            travels_filtered = travels.filter(name__contains=search)
+            return travels_filtered
+
+        else:
+            return travels
+
 class TravelDetailView(DetailView):
     template_name = 'travel_detail.html'
     model = Travel

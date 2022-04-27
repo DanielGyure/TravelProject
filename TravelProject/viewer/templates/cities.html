@@ -8,21 +8,23 @@
 
 <hr>
 
-<table class="table">
-  <thead class="thead-dark">
-  <tr>
-    <th>Name</th>
-    <th>Country</th>
-  </tr>
-  </thead>
+{% for c in cities %}
 
-    {% for c in cities %}
+<div class="text-center">
+<div class="card mb-3" style="max-width: 600px;">
+  {% if c.cover %}
+    <img src="{{c.cover.url}}" class="card-img-top" width="300" height="auto">
+  {% else %}
+    <img src="https://dummyimage.com/200x300/000/fff&text=NO+IMAGE" width="300" height="auto">
+  {% endif %}
+  <div class="card-body">
+    <h5 class="card-title"><a href="{% url 'city_detail' c.id %}"><b>{{ c.name }}</b></a></h5>
+    <p class="card-text">{{ c.description }}</p>
+  </div>
+  </div>
 
-  <tr>
-    <td><a href="{% url 'city_detail' c.id %}">{{ c.name }}</a></td>
-    <td>{{ c.country }}</td>
-  </tr>
-    {% endfor %}
-</table>
+{% endfor %}
+
+</div>
 
 {% endblock %}

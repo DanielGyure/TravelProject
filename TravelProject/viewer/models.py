@@ -28,7 +28,6 @@ class Travel(models.Model):
     date_of_departure = models.DateField()
     date_of_return = models.DateField()
     people = models.IntegerField()
-    type = models.CharField(max_length=15)
     price = models.FloatField(default=0)
     description = models.TextField(null=True, blank=True)
     cover = models.ImageField(null=True, blank=True, upload_to='images/')

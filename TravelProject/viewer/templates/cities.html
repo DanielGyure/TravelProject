@@ -3,7 +3,7 @@
 {% block content %}
 
 {% if perms.viewer.add_city %}
-<a href="{% url 'create_city' %}" class="btn btn-success">Create City</a>
+<a href="{% url 'create_city' %}" class="btn btn-outline-dark" data-mdb-ripple-color="dark">Create City</a>
 {% endif %}
 
 <hr>

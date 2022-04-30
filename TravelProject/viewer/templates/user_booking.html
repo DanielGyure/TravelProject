@@ -11,7 +11,7 @@
     <p class="card-title"><b>First Name:</b> {{ b.first_name }}</p>
     <p class="card-title"><b>Last Name:</b> {{ b.last_name }}</p>
     <p class="card-text"><b>Comments:</b> {{ b.comments }}</p>
-    <a href="{% url 'travels' %}" class="btn btn-success">{{ b.travel.name }}</a>
+    <a href="{% url 'travels' %}" class="btn btn-outline-dark" data-mdb-ripple-color="dark">{{ b.travel.name }}</a>
   </div>
 </div>
 

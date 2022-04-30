@@ -23,9 +23,9 @@
                 <td>{{ form.password }}</td>
             </tr>
         </table>
-        <input type="submit" value="login" class="btn btn-primary"/>
+        <input type="submit" value="login" class="btn btn-outline-dark" data-mdb-ripple-color="dark"/>
         <input type="hidden" name="next" value="{{ next }}"/>
     </form>
-<a href="{% url 'register' %}" class="btn btn-primary">Create New User</a>
+<a href="{% url 'register' %}" class="btn btn-outline-dark" data-mdb-ripple-color="dark">Create New User</a>
 
 {% endblock %}

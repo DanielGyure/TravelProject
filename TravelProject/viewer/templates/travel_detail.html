@@ -3,11 +3,11 @@
 {% block content %}
 
 {% if perms.viewer.change_travel %}
-<a href="{% url 'update_travel' travel.id %}" class="btn btn-success">Update Trip</a>
+<a href="{% url 'update_travel' travel.id %}" class="btn btn-outline-dark" data-mdb-ripple-color="dark">Update Trip</a>
 {% endif %}
 
 {% if perms.viewer.delete_travel %}
-<a href="{% url 'delete_travel' travel.id %}" class="btn btn-success">Delete Trip</a>
+<a href="{% url 'delete_travel' travel.id %}" class="btn btn-outline-dark" data-mdb-ripple-color="dark">Delete Trip</a>
 {% endif %}
 
 <hr>
@@ -21,7 +21,7 @@
 <hr>
 
 <p><b>Name:</b> {{travel.name}}</p>
-<p><b>City:</b> {{travel.city}}</p>
+<p><b>City:</b><a href="{% url 'city_detail' travel.city.id %}"> {{travel.city}}</a></p>
 <p><b>Departure Date:</b> {{travel.date_of_departure}}</p>
 <p><b>Return Date:</b> {{travel.date_of_return}}</p>
 <p><b>Number of People:</b> {{travel.people}}</p>
@@ -29,6 +29,6 @@
 <p><b>Description:</b> {{travel.description}}</p>
 
 
-<a href="{% url 'book_travel' travel.id %}" class="btn btn-success">Book This Trip</a>
+<a href="{% url 'book_travel' travel.id %}" class="btn btn-outline-dark" data-mdb-ripple-color="dark">Book This Trip</a>
 
 {% endblock %}

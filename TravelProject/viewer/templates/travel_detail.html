@@ -3,11 +3,11 @@
 {% block content %}
 
 {% if perms.viewer.change_travel %}
-<a href="{% url 'update_travel' travel.id %}" class="btn btn-success">Update Trip</a>
+<a href="{% url 'update_travel' travel.id %}" class="btn btn-outline-dark" data-mdb-ripple-color="dark">Update Trip</a>
 {% endif %}
 
 {% if perms.viewer.delete_travel %}
-<a href="{% url 'delete_travel' travel.id %}" class="btn btn-success">Delete Trip</a>
+<a href="{% url 'delete_travel' travel.id %}" class="btn btn-outline-dark" data-mdb-ripple-color="dark">Delete Trip</a>
 {% endif %}
 
 <hr>
@@ -29,6 +29,6 @@
 <p><b>Description:</b> {{travel.description}}</p>
 
 
-<a href="{% url 'book_travel' travel.id %}" class="btn btn-success">Book This Trip</a>
+<a href="{% url 'book_travel' travel.id %}" class="btn btn-outline-dark" data-mdb-ripple-color="dark">Book This Trip</a>
 
 {% endblock %}

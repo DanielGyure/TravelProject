@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 class Country(models.Model):
     name = models.CharField(max_length=10)
     description = models.TextField(null=True, blank=True)
+    cover = models.ImageField(null=True, blank=True, upload_to='images/')
 
     def __str__(self):
         return self.name

@@ -15,5 +15,15 @@
 <p><b>Name:</b> {{country.name}}</p>
 <p><b>Description:</b> {{country.description}}</p>
 
+<hr>
+
+{%if country.cover %}
+  <p> <img src="{{country.cover.url}}" width="500" height="auto"> </p>
+{% else %}
+  <p> <img src="https://dummyimage.com/200x300/000/fff&text=NO+IMAGE" width="500" height="auto"> </p>
+{% endif %}
+
+<hr>
+
 
 {% endblock %}

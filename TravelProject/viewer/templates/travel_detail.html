@@ -10,6 +10,7 @@
 <a href="{% url 'delete_travel' travel.id %}" class="btn btn-outline-dark" data-mdb-ripple-color="dark">Delete Trip</a>
 {% endif %}
 
+<hr>
 
 {%if travel.cover %}
   <p> <img src="{{travel.cover.url}}" width="500" height="auto"> </p>

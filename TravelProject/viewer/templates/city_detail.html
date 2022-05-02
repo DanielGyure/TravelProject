@@ -10,6 +10,8 @@
 <a href="{% url 'delete_city' city.id %}" class="btn btn-outline-dark" data-mdb-ripple-color="dark">Delete City</a>
 {% endif %}
 
+<hr>
+
 {%if city.cover %}
   <p> <img src="{{city.cover.url}}" width="500" height="auto"> </p>
 {% else %}

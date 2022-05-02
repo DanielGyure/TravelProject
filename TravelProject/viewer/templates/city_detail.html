@@ -20,7 +20,7 @@
 
 
 <h2>{{city.name}}</h2>
-<p><b>Country:</b><a href="{% url 'country_detail' city.country.id %}"> {{city.country}}</a></p>
+<p><b>Country:</b><a href="{% url 'country_detail' city.country.id %}" class="text-info"> {{city.country}}</a></p>
 <p><b>Description:</b> {{city.description}}</p>
 
 {% endblock %}

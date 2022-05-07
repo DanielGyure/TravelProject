@@ -23,4 +23,6 @@
 <p><b>Country:</b><a href="{% url 'country_detail' city.country.id %}" class="text-info"> {{city.country}}</a></p>
 <p><b>Description:</b> {{city.description}}</p>
 
+<a href="{% url 'travels' %}" class="btn btn-outline-dark" data-mdb-ripple-color="dark">Check out the available offers</a>
+
 {% endblock %}
